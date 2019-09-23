@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/BackEnd.iml" filepath="$PROJECT_DIR$/.idea/BackEnd.iml" />
-      <module fileurl="file://$PROJECT_DIR$/java-starthere/StartHere/starthere.iml" filepath="$PROJECT_DIR$/java-starthere/StartHere/starthere.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-starthere copy/StartHere/starthere.iml" filepath="$PROJECT_DIR$/java-starthere copy/StartHere/starthere.iml" />
     </modules>
   </component>
 </project>
