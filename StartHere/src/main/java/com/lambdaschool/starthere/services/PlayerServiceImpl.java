@@ -70,76 +70,79 @@ public class PlayerServiceImpl implements PlayerService{
         return playersrepos.save(newPlayer);
     }
 
+
+
+
+
     @Override
     public Player update(Player player, long id){
         Player currentPlayer = playersrepos.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException(Long.toString(id)));
 
-        if (player.getCustname() != null)
+        if (player.getName() != null)
         {
-            currentPlayer.setCustname(player.getCustname());
+            currentPlayer.setName(player.getName());
         }
 
-        if (player.getCustcity() != null)
+        if (player.getTeam() != null)
         {
-            currentPlayer.setCustcity(player.getCustcity());
+            currentPlayer.setTeam(player.getTeam());
         }
 
-        if (player.getWorkingarea() != null)
+        if (player.getId() >= 0)
         {
-            currentPlayer.setWorkingarea(player.getWorkingarea());
+            currentPlayer.setId(player.getId());
         }
 
-        if (player.getCustcountry() != null)
+        if (player.getYears() != 0)
         {
-            currentPlayer.setCustcountry(player.getCustcountry());
+            currentPlayer.setYears(player.getYears());
         }
 
-        if (player.getGrade() != null)
+        if (player.getGames() >= 0)
         {
-            currentPlayer.setGrade(player.getGrade());
+            currentPlayer.setGames(player.getGames());
         }
 
-        if (player.getOpeningamt()!= 0)
+        if (player.getMinutesplayed()!= 0)
         {
-            currentPlayer.setOpeningamt(player.getOpeningamt());
+            currentPlayer.setMinutesplayed(player.getMinutesplayed());
         }
 
-        if (player.getReceiveamt() != 0)
+        if (player.getPoints() != 0)
         {
-            currentPlayer.setReceiveamt(player.getReceiveamt());
+            currentPlayer.setPoints(player.getPoints());
         }
 
-        if (player.getPaymentamt() != 0)
+        if (player.getAssists() != 0)
         {
-            currentPlayer.setPaymentamt(player.getPaymentamt());
+            currentPlayer.setAssists(player.getAssists());
         }
 
-        if (player.getOutstandingamt() != 0)
+
+        if (player.getFieldgoalpercentage() != 0)
         {
-            currentPlayer.setOutstandingamt(player.getOutstandingamt());
+            currentPlayer.setFieldgoalpercentage(player.getFieldgoalpercentage());
         }
 
-        if (player.getPhone() != null)
+        if (player.getMinutespergame() != 0)
         {
-            currentPlayer.setPhone(player.getPhone());
+            currentPlayer.setMinutespergame(player.getMinutespergame());
         }
 
-        if (player.getAgent() !=null)
+        if (player.getPointspergame() !=0)
         {
-            currentPlayer.setAgent(player.getAgent());
+            currentPlayer.setPointspergame(player.getPointspergame());
         }
 
-        // adds new orders
-        if (player.getOrders().size() > 0)
+        if (player.getAssistspergame() !=0)
         {
-            for (Orders o : player.getOrders())
-            {
-                currentPlayer.getOrders().add(new Orders(o.getOrdamount(), o.getAdvanceamount(), currentPlayer, o.getOrddescription()));
-            }
+            currentPlayer.setAssistspergame(player.getAssistspergame());
         }
 
-        return custrepos.save(currentPlayer);
+
+
+        return playersrepos.save(currentPlayer);
 
     }
 }
