@@ -38,18 +38,18 @@ public class APIsController
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
-        String requestURL = "https://openlibrary.org/api/books?bibkeys=" + "ISBN:" + isbn + "&format=json";
+        String requestURL = "https://nba-project.herokuapp.com/api"  + "&format=json";
 
         ParameterizedTypeReference<Map<String, APIOpenLibrary>> responseType = new ParameterizedTypeReference<Map<String, APIOpenLibrary>>()
         {
         };
         ResponseEntity<Map<String, APIOpenLibrary>> responseEntity = restTemplate.exchange(requestURL, HttpMethod.GET, null, responseType);
 
-        Map<String, APIOpenLibrary> ourBooks = responseEntity.getBody();
+        Map<String, APIOpenLibrary> ourPlayers = responseEntity.getBody();
 
         // goodreads
 
-        System.out.println(ourBooks);
-        return new ResponseEntity<>(ourBooks, HttpStatus.OK);
+        System.out.println(ourPlayers);
+        return new ResponseEntity<>(ourPlayers, HttpStatus.OK);
     }
 }
