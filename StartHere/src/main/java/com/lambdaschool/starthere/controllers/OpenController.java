@@ -2,8 +2,10 @@ package com.lambdaschool.starthere.controllers;
 
 import com.lambdaschool.starthere.models.User;
 import com.lambdaschool.starthere.models.UserRoles;
+import com.lambdaschool.starthere.models.Useremail;
 import com.lambdaschool.starthere.services.RoleService;
 import com.lambdaschool.starthere.services.UserService;
+import com.lambdaschool.starthere.services.UseremailService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +39,9 @@ public class OpenController
     @Autowired
     private RoleService roleService;
 
+    @Autowired
+    private UseremailService useremailService;
+
     @PostMapping(value = "/createnewuser",
                  consumes = {"application/json"},
                  produces = {"application/json"})
@@ -52,6 +57,7 @@ public class OpenController
         newuser.setUserroles(newRoles);
 
         newuser = userService.save(newuser);
+//        newuserEmail = useremailService.save(new)
 
         // set the location header for the newly created resource - to another controller!
         HttpHeaders responseHeaders = new HttpHeaders();

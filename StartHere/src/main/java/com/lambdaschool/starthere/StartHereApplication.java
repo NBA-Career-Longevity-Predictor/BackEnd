@@ -1,5 +1,6 @@
 package com.lambdaschool.starthere;
 
+import com.lambdaschool.starthere.models.Player;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,8 @@ public class StartHereApplication
     {
         checkEnvironmentVariable("OAUTHCLIENTID");
         checkEnvironmentVariable("OAUTHCLIENTSECRET");
-
+        Player player = new Player();
+        player.findPlayersByID(1);
         if (!stop)
         {
             ApplicationContext ctx = SpringApplication.run(StartHereApplication.class, args);
@@ -44,5 +46,7 @@ public class StartHereApplication
             dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
         }
     }
+
+
 
 }
