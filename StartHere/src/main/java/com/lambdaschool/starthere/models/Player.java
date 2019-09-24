@@ -1,6 +1,13 @@
 package com.lambdaschool.starthere.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table()
 public class Player {
+    @Id
     private long  id;
     private String name;
     private String team;

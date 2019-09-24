@@ -33,8 +33,8 @@ public class StartHereApplication
 
     public static void main(String[] args)
     {
-        checkEnvironmentVariable("LAMBDACLIENT");
-        checkEnvironmentVariable("LAMBDASECRET");
+        checkEnvironmentVariable("OAUTHCLIENTID");
+        checkEnvironmentVariable("OAUTHCLIENTSECRET");
 
         if (!stop)
         {

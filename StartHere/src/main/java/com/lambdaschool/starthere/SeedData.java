@@ -1,9 +1,7 @@
 package com.lambdaschool.starthere;
 
-import com.lambdaschool.starthere.models.Role;
-import com.lambdaschool.starthere.models.User;
-import com.lambdaschool.starthere.models.UserRoles;
-import com.lambdaschool.starthere.models.Useremail;
+import com.lambdaschool.starthere.models.*;
+import com.lambdaschool.starthere.services.PlayerService;
 import com.lambdaschool.starthere.services.RoleService;
 import com.lambdaschool.starthere.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +21,13 @@ public class SeedData implements CommandLineRunner
     @Autowired
     UserService userService;
 
-
+    @Autowired
+    PlayerService playerService;
     @Override
     public void run(String[] args) throws Exception
     {
+        Player p1 = new Player(0, "Lebron James", "Lakers", 16, 1888888, 90000, 10000000, 1, 0.0001, 0.1, 0.2, 0.5);
+        playerService.save(p1);
         Role r1 = new Role("admin");
         Role r2 = new Role("user");
         Role r3 = new Role("data");
