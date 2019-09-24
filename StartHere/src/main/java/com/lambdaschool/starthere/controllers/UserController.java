@@ -72,7 +72,7 @@ public class UserController
     }
 
 
-    @GetMapping(value = "/login",
+    @GetMapping(value = "/username",
                 produces = {"application/json"})
     @ResponseBody
     public ResponseEntity<?> getCurrentUserName(HttpServletRequest request, Authentication authentication)
