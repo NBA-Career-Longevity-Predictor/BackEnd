@@ -72,7 +72,7 @@ public class UserController
     }
 
 
-    @GetMapping(value = "/getusername",
+    @GetMapping(value = "/login",
                 produces = {"application/json"})
     @ResponseBody
     public ResponseEntity<?> getCurrentUserName(HttpServletRequest request, Authentication authentication)
@@ -85,7 +85,7 @@ public class UserController
 
 
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @PostMapping(value = "/user",
+    @PostMapping(value = "/signup",
                  consumes = {"application/json"},
                  produces = {"application/json"})
     public ResponseEntity<?> addNewUser(HttpServletRequest request, @Valid
