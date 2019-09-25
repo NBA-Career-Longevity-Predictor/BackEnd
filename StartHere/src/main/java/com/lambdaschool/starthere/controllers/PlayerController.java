@@ -25,6 +25,8 @@
 //    @Autowired
 //    private PlayerService playerService;
 //
+//
+//
 //    //List of all players
 //    @ApiOperation(value = "return all players with stats", response = Player.class, responseContainer = "List")
 //    @GetMapping(value="/players", produces = {"application/json"})
@@ -56,25 +58,25 @@
 //        return new ResponseEntity<>(HttpStatus.OK);
 //    }
 //
-//    @ApiOperation(value = "Saves a Player to your saved List", response = void.class)
-//    @ApiResponses(value = {
-//            @ApiResponse(code = 201, message = "Player was saved successfully"),
-//            @ApiResponse(code = 500, message = "Error saving Player")
-//})
-//    @PostMapping(value = "/player/save",
-//            consumes = {"application/json"},
-//            produces = {"application/json"})
-//    public ResponseEntity<?> addNewPlayer(@Valid
-//                                            @RequestBody
-//                                                    Player newplayer) throws URISyntaxException
-//    {
-//        newplayer = playerService.save(newplayer);
-//
-//        // set the location header for the newly created resource
-//        HttpHeaders responseHeaders = new HttpHeaders();
-//        URI newCustomerURI = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newplayer.getId()).toUri();
-//        responseHeaders.setLocation(newCustomerURI);
-//
-//        return new ResponseEntity<>(null, responseHeaders, HttpStatus.CREATED);
-//    }
+////    @ApiOperation(value = "Saves a Player to your saved List", response = void.class)
+////    @ApiResponses(value = {
+////            @ApiResponse(code = 201, message = "Player was saved successfully"),
+////            @ApiResponse(code = 500, message = "Error saving Player")
+////})
+////    @PostMapping(value = "/player/save",
+////            consumes = {"application/json"},
+////            produces = {"application/json"})
+////    public ResponseEntity<?> addNewPlayer(@Valid
+////                                            @RequestBody
+////                                                    Player newplayer) throws URISyntaxException
+////    {
+////        newplayer = playerService.save(newplayer);
+////
+////        // set the location header for the newly created resource
+////        HttpHeaders responseHeaders = new HttpHeaders();
+////        URI newCustomerURI = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newplayer.findPlayersByID("{id}")).toUri();
+////        responseHeaders.setLocation(newCustomerURI);
+////
+////        return new ResponseEntity<>(null, responseHeaders, HttpStatus.CREATED);
+////    }
 //}

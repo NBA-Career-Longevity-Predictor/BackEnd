@@ -24,10 +24,10 @@
 //    }
 //
 //
-//    @Override
-//    public Player findByPlayerId(long id) throws EntityNotFoundException {
-//        return playersrepos.findById(id).orElseThrow(()-> new EntityNotFoundException(" " + id));
-//    }
+////    @Override
+////    public Player findByPlayerId(long id) throws EntityNotFoundException {
+////        return playersrepos.findById(id).orElseThrow(()-> new EntityNotFoundException(" " + id));
+////    }
 //
 //    @Override
 //    public Player findByPlayerName(String name){
@@ -55,94 +55,80 @@
 //    @Override
 //    public Player save(Player player){
 //        Player newPlayer = new Player();
-//        newPlayer.setId(player.getId());
-//        newPlayer.setName(player.getName());
-//        newPlayer.setTeam(player.getTeam());
-//        newPlayer.setYears(player.getYears());
-//        newPlayer.setGames(player.getGames());
-//        newPlayer.setMinutesplayed(player.getMinutesplayed());
-//        newPlayer.setPoints(player.getPoints());
-//        newPlayer.setAssists(player.getAssists());
-//        newPlayer.setFieldgoalpercentage(player.getFieldgoalpercentage());
-//        newPlayer.setMinutespergame(player.getMinutespergame());
-//        newPlayer.setPointspergame(player.getPointspergame());
-//        newPlayer.setAssistspergame(player.getAssistspergame());
 //        return playersrepos.save(newPlayer);
 //    }
 //
 //
 //
-//
-//
-//    @Override
-//    public Player update(Player player, long id){
-//        Player currentPlayer = playersrepos.findById(id)
-//                .orElseThrow(() -> new EntityNotFoundException(Long.toString(id)));
-//
-//        if (player.getName() != null)
-//        {
-//            currentPlayer.setName(player.getName());
-//        }
-//
-//        if (player.getTeam() != null)
-//        {
-//            currentPlayer.setTeam(player.getTeam());
-//        }
-//
-//        if (player.getId() >= 0)
-//        {
-//            currentPlayer.setId(player.getId());
-//        }
-//
-//        if (player.getYears() != 0)
-//        {
-//            currentPlayer.setYears(player.getYears());
-//        }
-//
-//        if (player.getGames() >= 0)
-//        {
-//            currentPlayer.setGames(player.getGames());
-//        }
-//
-//        if (player.getMinutesplayed()!= 0)
-//        {
-//            currentPlayer.setMinutesplayed(player.getMinutesplayed());
-//        }
-//
-//        if (player.getPoints() != 0)
-//        {
-//            currentPlayer.setPoints(player.getPoints());
-//        }
-//
-//        if (player.getAssists() != 0)
-//        {
-//            currentPlayer.setAssists(player.getAssists());
-//        }
-//
-//
-//        if (player.getFieldgoalpercentage() != 0)
-//        {
-//            currentPlayer.setFieldgoalpercentage(player.getFieldgoalpercentage());
-//        }
-//
-//        if (player.getMinutespergame() != 0)
-//        {
-//            currentPlayer.setMinutespergame(player.getMinutespergame());
-//        }
-//
-//        if (player.getPointspergame() !=0)
-//        {
-//            currentPlayer.setPointspergame(player.getPointspergame());
-//        }
-//
-//        if (player.getAssistspergame() !=0)
-//        {
-//            currentPlayer.setAssistspergame(player.getAssistspergame());
-//        }
-//
-//
-//
-//        return playersrepos.save(currentPlayer);
-//
-//    }
+////    @Override
+////    public Player update(Player player, long id){
+////        Player currentPlayer = playersrepos.findById(id)
+////                .orElseThrow(() -> new EntityNotFoundException(Long.toString(id)));
+////
+////        if (player.getName() != null)
+////        {
+////            currentPlayer.setName(player.getName());
+////        }
+////
+////        if (player.getTeam() != null)
+////        {
+////            currentPlayer.setTeam(player.getTeam());
+////        }
+////
+////        if (player.getId() >= 0)
+////        {
+////            currentPlayer.setId(player.getId());
+////        }
+////
+////        if (player.getYears() != 0)
+////        {
+////            currentPlayer.setYears(player.getYears());
+////        }
+////
+////        if (player.getGames() >= 0)
+////        {
+////            currentPlayer.setGames(player.getGames());
+////        }
+////
+////        if (player.getMinutesplayed()!= 0)
+////        {
+////            currentPlayer.setMinutesplayed(player.getMinutesplayed());
+////        }
+////
+////        if (player.getPoints() != 0)
+////        {
+////            currentPlayer.setPoints(player.getPoints());
+////        }
+////
+////        if (player.getAssists() != 0)
+////        {
+////            currentPlayer.setAssists(player.getAssists());
+////        }
+////
+////
+////        if (player.getFieldgoalpercentage() != 0)
+////        {
+////            currentPlayer.setFieldgoalpercentage(player.getFieldgoalpercentage());
+////        }
+////
+////        if (player.getMinutespergame() != 0)
+////        {
+////            currentPlayer.setMinutespergame(player.getMinutespergame());
+////        }
+////
+////        if (player.getPointspergame() !=0)
+////        {
+////            currentPlayer.setPointspergame(player.getPointspergame());
+////        }
+////
+////        if (player.getAssistspergame() !=0)
+////        {
+////            currentPlayer.setAssistspergame(player.getAssistspergame());
+////        }
+////
+////
+////
+////        return playersrepos.save(currentPlayer);
+////
+////    }
 //}

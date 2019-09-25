@@ -34,10 +34,14 @@ public class StartHereApplication
 
     public static void main(String[] args)
     {
-        checkEnvironmentVariable("OAUTHCLIENTID");
-        checkEnvironmentVariable("OAUTHCLIENTSECRET");
         Player player = new Player();
-        player.findPlayersByID(1);
+        player.findPlayersByName("Kobe Bryant");
+        System.out.println(player.getPlayer());
+        System.out.println(player.getGames());
+
+        checkEnvironmentVariable("LAMBDACLIENT");
+        checkEnvironmentVariable("LAMBDASECRET");
+
         if (!stop)
         {
             ApplicationContext ctx = SpringApplication.run(StartHereApplication.class, args);
