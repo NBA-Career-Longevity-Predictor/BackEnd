@@ -1,5 +1,7 @@
 package com.lambdaschool.starthere.models;
 
+import org.springframework.web.bind.annotation.RestController;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,9 +16,9 @@ import java.sql.Statement;
 public class Player {
     //ec2-174-129-231-100.compute-1.amazonaws.com
 
-    private String url = "jdbc:postgresql://ec2-174-129-231-100.compute-1.amazonaws.com:5432/de7hs641qkl8lj";
-    private String user = "pvlzqlvyjrtgur";
-    private String password = "6319504f04fc4fce4775d0ee79c01c456e4e16767c646c929c69bd525d2685db";
+    private final String url = "jdbc:postgresql://ec2-174-129-231-100.compute-1.amazonaws.com:5432/de7hs641qkl8lj";
+    private final String user = "pvlzqlvyjrtgur";
+    private final String password = "6319504f04fc4fce4775d0ee79c01c456e4e16767c646c929c69bd525d2685db";
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long playerid;
@@ -54,31 +56,31 @@ public class Player {
     }
 
     public Player(){
-//        this.player = getPlayer();
-//        this.all_nba = getAll_nba();
-//        this.all_star = getAll_star();
-//        this.draft_year = getDraft_year();
-//        this.pk = getPk();
-//        this.team = getTeam();
-//        this.college = getCollege();
-//        this.yrs = getYrs();
-//        this.games = getGames();
-//        this.minutes_played = getMinutes_played();
-//        this.pts = getPts();
-//        this.trb = getTrb();
-//        this.ast = getAst();
-//        this.fg_percentage = getFg_percentage();
-//        this.tp_percentage = getTp_percentage();
-//        this.ft_percentage = getFt_percentage();
-//        this.minutes_per_game = getMinutes_per_game();
-//        this.points_per_game = getPoints_per_game();
-//        this.assits_per_game = getAssits_per_game();
-//        this.trb_per_game = getTrb_per_game();
-//        this.win_share = getWin_share();
-//        this.ws_per_game = getWs_per_game();
-//        this.bpm = getBpm();
-//        this.vorp = getVorp();
-//        this.attend_college = getAttend_college();
+        this.player = getPlayer();
+        this.all_nba = getAll_nba();
+        this.all_star = getAll_star();
+        this.draft_year = getDraft_year();
+        this.pk = getPk();
+        this.team = getTeam();
+        this.college = getCollege();
+        this.yrs = getYrs();
+        this.games = getGames();
+        this.minutes_played = getMinutes_played();
+        this.pts = getPts();
+        this.trb = getTrb();
+        this.ast = getAst();
+        this.fg_percentage = getFg_percentage();
+        this.tp_percentage = getTp_percentage();
+        this.ft_percentage = getFt_percentage();
+        this.minutes_per_game = getMinutes_per_game();
+        this.points_per_game = getPoints_per_game();
+        this.assits_per_game = getAssits_per_game();
+        this.trb_per_game = getTrb_per_game();
+        this.win_share = getWin_share();
+        this.ws_per_game = getWs_per_game();
+        this.bpm = getBpm();
+        this.vorp = getVorp();
+        this.attend_college = getAttend_college();
 
     }
 
