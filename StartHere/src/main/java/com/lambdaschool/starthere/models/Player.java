@@ -19,8 +19,7 @@ public class Player {
     private final String url = "jdbc:postgresql://ec2-174-129-231-100.compute-1.amazonaws.com:5432/de7hs641qkl8lj";
     private final String user = "pvlzqlvyjrtgur";
     private final String password = "6319504f04fc4fce4775d0ee79c01c456e4e16767c646c929c69bd525d2685db";
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private long playerid;
 
     private String player;
@@ -56,35 +55,12 @@ public class Player {
     }
 
     public Player(){
-        this.player = getPlayer();
-        this.all_nba = getAll_nba();
-        this.all_star = getAll_star();
-        this.draft_year = getDraft_year();
-        this.pk = getPk();
-        this.team = getTeam();
-        this.college = getCollege();
-        this.yrs = getYrs();
-        this.games = getGames();
-        this.minutes_played = getMinutes_played();
-        this.pts = getPts();
-        this.trb = getTrb();
-        this.ast = getAst();
-        this.fg_percentage = getFg_percentage();
-        this.tp_percentage = getTp_percentage();
-        this.ft_percentage = getFt_percentage();
-        this.minutes_per_game = getMinutes_per_game();
-        this.points_per_game = getPoints_per_game();
-        this.assits_per_game = getAssits_per_game();
-        this.trb_per_game = getTrb_per_game();
-        this.win_share = getWin_share();
-        this.ws_per_game = getWs_per_game();
-        this.bpm = getBpm();
-        this.vorp = getVorp();
-        this.attend_college = getAttend_college();
+
 
     }
 
-    public Player(String player, int all_nba, int all_star, int draft_year, int pk, String team, String college, int yrs, int games, int minutes_played, int pts, int trb, int ast, double fg_percentage, double tp_percentage, double ft_percentage, double minutes_per_game, double points_per_game, double assits_per_game, double trb_per_game, int win_share, double ws_per_game, double bpm, double vorp, int attend_college) {
+    public Player(int playerid, String player, int all_nba, int all_star, int draft_year, int pk, String team, String college, int yrs, int games, int minutes_played, int pts, int trb, int ast, double fg_percentage, double tp_percentage, double ft_percentage, double minutes_per_game, double points_per_game, double assits_per_game, double trb_per_game, int win_share, double ws_per_game, double bpm, double vorp, int attend_college) {
+        this.playerid = playerid;
         this.player = player;
         this.all_nba = all_nba;
         this.all_star = all_star;
@@ -130,7 +106,9 @@ public class Player {
 
     private void displayPlayers(ResultSet rs) throws SQLException {
         while (rs.next()) {
+                     setPlayerid(Integer.parseInt(rs.getString("unnamed_0")));
                      setPlayer(rs.getString("player"));
+                     setTeam(rs.getString("team"));
                      setAll_nba(Integer.parseInt(rs.getString("all_nba")));
                      setAll_star(Integer.parseInt(rs.getString("all_star")));
                      setDraft_year(Integer.parseInt(rs.getString("draft_yr")));
@@ -391,7 +369,7 @@ public class Player {
         try (Connection conn = connect();
              PreparedStatement pstmt = conn.prepareStatement(SQL)) {
 
-            pstmt.setInt(2, ID);
+            pstmt.setInt(1, ID);
             ResultSet rs = pstmt.executeQuery();
             displayPlayers(rs);
         } catch (SQLException ex) {

@@ -34,11 +34,6 @@ public class StartHereApplication
 
     public static void main(String[] args)
     {
-        Player player = new Player();
-        player.findPlayersByName("Kobe Bryant");
-        System.out.println(player.getPlayer());
-        System.out.println(player.getGames());
-
 
         checkEnvironmentVariable("LAMBDACLIENT");
         checkEnvironmentVariable("LAMBDASECRET");

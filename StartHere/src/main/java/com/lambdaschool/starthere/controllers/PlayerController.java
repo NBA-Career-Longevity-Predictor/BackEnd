@@ -23,17 +23,17 @@ public class PlayerController
     //
     // localhost:2019/otherapis/openlibrary/0982477562
 
-    @GetMapping(value = "/player/{id}",
+    @GetMapping(value = "/player/{name}",
             produces = {"application/json"})
     public ResponseEntity<?> listAPlayerByName(HttpServletRequest request,
                                                 @PathVariable
-                                                        int id)
+                                                        String name)
     {
         logger.trace(request.getMethod()
                 .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
         Player player = new Player();
-        player.findPlayersByID(id);
+        player.findPlayersByName(name);
 
 
         System.out.println(player);
