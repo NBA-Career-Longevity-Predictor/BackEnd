@@ -40,8 +40,8 @@ public class StartHereApplication
         System.out.println(player.getGames());
 
 
-        checkEnvironmentVariable("LAMBDACLIENT");
-        checkEnvironmentVariable("LAMBDASECRET");
+        checkEnvironmentVariable("OAUTHCLIENTID");
+        checkEnvironmentVariable("OAUTHCLIENTSECRET");
 
         if (!stop)
         {
