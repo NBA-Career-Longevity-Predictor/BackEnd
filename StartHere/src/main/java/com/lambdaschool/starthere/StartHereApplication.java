@@ -39,6 +39,7 @@ public class StartHereApplication
         System.out.println(player.getPlayer());
         System.out.println(player.getGames());
 
+
         checkEnvironmentVariable("LAMBDACLIENT");
         checkEnvironmentVariable("LAMBDASECRET");
 

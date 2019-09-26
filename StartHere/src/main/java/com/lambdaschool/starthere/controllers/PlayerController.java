@@ -1,27 +1,44 @@
-//package com.lambdaschool.starthere.controllers;
-//
-//import com.lambdaschool.starthere.models.ErrorDetail;
-//import com.lambdaschool.starthere.models.Player;
-//import com.lambdaschool.starthere.services.PlayerService;
-//import io.swagger.annotations.Api;
-//import io.swagger.annotations.ApiOperation;
-//import io.swagger.annotations.ApiResponse;
-//import io.swagger.annotations.ApiResponses;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.http.HttpHeaders;
-//import org.springframework.http.HttpStatus;
-//import org.springframework.http.ResponseEntity;
-//import org.springframework.web.bind.annotation.*;
-//import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-//
-//import javax.validation.Valid;
-//import java.net.URI;
-//import java.net.URISyntaxException;
-//import java.util.List;
-//
-//@RestController
-//public class PlayerController
-//{
+package com.lambdaschool.starthere.controllers;
+import com.lambdaschool.starthere.models.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+
+
+import javax.servlet.http.HttpServletRequest;
+
+
+@RestController
+public class PlayerController
+{
+    private static final Logger logger = LoggerFactory.getLogger(RolesController.class);
+    private RestTemplate restTemplate = new RestTemplate();
+
+    // taken from https://openlibrary.org/dev/docs/api/books
+    // returns a list of books - you can include multiple ISBNs in a single request
+    // This API returns a map instead of the standard list
+    //
+    // localhost:2019/otherapis/openlibrary/0982477562
+
+    @GetMapping(value = "/player/{id}",
+            produces = {"application/json"})
+    public ResponseEntity<?> listAPlayerByName(HttpServletRequest request,
+                                                @PathVariable
+                                                        int id)
+    {
+        logger.trace(request.getMethod()
+                .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
+        Player player = new Player();
+        player.findPlayersByID(id);
+
+
+        System.out.println(player);
+        return new ResponseEntity<>(player, HttpStatus.OK);
+    }
 //    @Autowired
 //    private PlayerService playerService;
 //
@@ -79,4 +96,4 @@
 ////
 ////        return new ResponseEntity<>(null, responseHeaders, HttpStatus.CREATED);
 ////    }
-//}
+}
