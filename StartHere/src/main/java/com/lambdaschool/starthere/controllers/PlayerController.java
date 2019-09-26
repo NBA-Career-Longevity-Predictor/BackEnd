@@ -18,7 +18,7 @@ public class PlayerController
     private static final Logger logger = LoggerFactory.getLogger(RolesController.class);
     private RestTemplate restTemplate = new RestTemplate();
 
-   
+
 
     @ApiOperation(value = "Return a player", response = Player.class, responseContainer = "String")
     @GetMapping(value = "/player/{name}",

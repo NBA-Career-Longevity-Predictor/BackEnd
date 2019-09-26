@@ -38,6 +38,9 @@ public class StartHereApplication
         checkEnvironmentVariable("OAUTHCLIENTID");
         checkEnvironmentVariable("OAUTHCLIENTSECRET");
 
+        Player player = new Player();
+        player.findPlayersByName("James Harden");
+        System.out.println(player);
         if (!stop)
         {
             ApplicationContext ctx = SpringApplication.run(StartHereApplication.class, args);

@@ -20,7 +20,7 @@ public class Player {
     private final String user = "pvlzqlvyjrtgur";
     private final String password = "6319504f04fc4fce4775d0ee79c01c456e4e16767c646c929c69bd525d2685db";
 
-    private long playerid;
+//    private long playerid;
 
     private String player;
     private int all_nba;
@@ -46,7 +46,7 @@ public class Player {
     private double ws_per_game;
     private double bpm;
     private double vorp;
-    private int attend_college;
+    private boolean attend_college;
 
 
 
@@ -59,8 +59,8 @@ public class Player {
 
     }
 
-    public Player(int playerid, String player, int all_nba, int all_star, int draft_year, int pk, String team, String college, int yrs, int games, int minutes_played, int pts, int trb, int ast, double fg_percentage, double tp_percentage, double ft_percentage, double minutes_per_game, double points_per_game, double assits_per_game, double trb_per_game, int win_share, double ws_per_game, double bpm, double vorp, int attend_college) {
-        this.playerid = playerid;
+    public Player( String player, int all_nba, int all_star, int draft_year, int pk, String team, String college, int yrs, int games, int minutes_played, int pts, int trb, int ast, double fg_percentage, double tp_percentage, double ft_percentage, double minutes_per_game, double points_per_game, double assits_per_game, double trb_per_game, int win_share, double ws_per_game, double bpm, double vorp, boolean attend_college) {
+
         this.player = player;
         this.all_nba = all_nba;
         this.all_star = all_star;
@@ -106,7 +106,7 @@ public class Player {
 
     private void displayPlayers(ResultSet rs) throws SQLException {
         while (rs.next()) {
-                     setPlayerid(Integer.parseInt(rs.getString("unnamed_0")));
+//                     setPlayerid(Integer.parseInt(rs.getString("player")));
                      setPlayer(rs.getString("player"));
                      setTeam(rs.getString("team"));
                      setAll_nba(Integer.parseInt(rs.getString("all_nba")));
@@ -131,7 +131,7 @@ public class Player {
                      setWs_per_game(Double.parseDouble(rs.getString("ws_per_game")));
                      setBpm(Double.parseDouble(rs.getString("bpm")));
                      setVorp(Double.parseDouble(rs.getString("vorp")));
-                     setAttend_college(Integer.parseInt(rs.getString("attend_college")));
+                     setAttend_college(Boolean.parseBoolean(rs.getString("attend_college")));
 
         }
     }
@@ -139,7 +139,7 @@ public class Player {
 
     public void findPlayersByName(String name) {
         String SQL = "SELECT * "
-                + "FROM players_nba "
+                + "FROM players_nba_data_players "
                 + "WHERE player= ?";
 
         try (Connection conn = connect();
@@ -153,6 +153,8 @@ public class Player {
         }
     }
 
+
+
     public double getAssits_per_game() {
         return assits_per_game;
     }
@@ -161,13 +163,13 @@ public class Player {
         this.assits_per_game = assits_per_game;
     }
 
-    public long getPlayerid() {
-        return playerid;
-    }
-
-    public void setPlayerid(long playerid) {
-        this.playerid = playerid;
-    }
+//    public long getPlayerid() {
+//        return playerid;
+//    }
+//
+//    public void setPlayerid(long playerid) {
+//        this.playerid = playerid;
+//    }
 
     public String getPlayer() {
         return player;
@@ -353,17 +355,17 @@ public class Player {
         this.vorp = vorp;
     }
 
-    public int getAttend_college() {
+    public boolean getAttend_college() {
         return attend_college;
     }
 
-    public void setAttend_college(int attend_college) {
+    public void setAttend_college(boolean attend_college) {
         this.attend_college = attend_college;
     }
 
     public void findPlayersByID(int ID) {
         String SQL = "SELECT * "
-                + "FROM players_nba "
+                + "FROM players_nba_data_players "
                 + "WHERE unnamed_0= ?";
 
         try (Connection conn = connect();
