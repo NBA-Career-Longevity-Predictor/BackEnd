@@ -25,7 +25,7 @@ public class Player {
     private String player;
     private int all_nba;
     private int all_star;
-    private int draft_year;
+    private int draft_yr;
     private int pk;
     private String team;
     private String college;
@@ -59,12 +59,12 @@ public class Player {
 
     }
 
-    public Player( String player, int all_nba, int all_star, int draft_year, int pk, String team, String college, int yrs, int games, int minutes_played, int pts, int trb, int ast, double fg_percentage, double tp_percentage, double ft_percentage, double minutes_per_game, double points_per_game, double assits_per_game, double trb_per_game, int win_share, double ws_per_game, double bpm, double vorp, boolean attend_college) {
+    public Player( String player, int all_nba, int all_star, int draft_yr, int pk, String team, String college, int yrs, int games, int minutes_played, int pts, int trb, int ast, double fg_percentage, double tp_percentage, double ft_percentage, double minutes_per_game, double points_per_game, double assits_per_game, double trb_per_game, int win_share, double ws_per_game, double bpm, double vorp, boolean attend_college) {
 
         this.player = player;
         this.all_nba = all_nba;
         this.all_star = all_star;
-        this.draft_year = draft_year;
+        this.draft_yr = draft_yr;
         this.pk = pk;
         this.team = team;
         this.college = college;
@@ -111,7 +111,7 @@ public class Player {
                      setTeam(rs.getString("team"));
                      setAll_nba(Integer.parseInt(rs.getString("all_nba")));
                      setAll_star(Integer.parseInt(rs.getString("all_star")));
-                     setDraft_year(Integer.parseInt(rs.getString("draft_yr")));
+                     setDraft_yr(Integer.parseInt(rs.getString("draft_yr")));
                      setPk(Integer.parseInt(rs.getString("pk")));
                      setCollege(rs.getString("college"));
                      setYrs(Integer.parseInt(rs.getString("yrs")));
@@ -195,12 +195,12 @@ public class Player {
         this.all_star = all_star;
     }
 
-    public int getDraft_year() {
-        return draft_year;
+    public int getDraft_yr() {
+        return draft_yr;
     }
 
-    public void setDraft_year(int draft_year) {
-        this.draft_year = draft_year;
+    public void setDraft_yr(int draft_yr) {
+        this.draft_yr = draft_yr;
     }
 
     public int getPk() {
